@@ -1,6 +1,15 @@
 package com.zx.po;
 
-public class room {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
+
+@Entity
+@Table(name="room")
+public class Room {
 
 	private int roomId;
 	private String roomName;
@@ -11,6 +20,9 @@ public class room {
 	private String roomLct;
 	private char roomStatus;
 	private float roomArea;
+	@Id
+	@GenericGenerator(name = "roomGenerator",strategy = "native")
+	@GeneratedValue(generator = "roomGenerator")
 	public int getRoomId() {
 		return roomId;
 	}

@@ -12,11 +12,12 @@ import com.zx.po.Emp;
  */
 public interface IEmpAccount {
 
-
 	/*
 	 * 员工登录
 	 * 返回值  emp
 	 * 参数  int empId,String empPwd
 	 */
 	Emp EmpLogin(int empId,String empPwd);
+	
+
 }

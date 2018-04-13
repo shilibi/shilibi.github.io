@@ -1,18 +1,23 @@
 package com.zx.po;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name="food")
-public class food {
+public class Food {
 	
 	private int foodId;
 	private String foodName;
 	private float foodPrice;
 	private char foodUnit;
 	@Id
+	@GenericGenerator(name="foodGenerator",strategy="native")//主键自增
+	@GeneratedValue(generator="foodGenerator")
 	public int getFoodId() {
 		return foodId;
 	}

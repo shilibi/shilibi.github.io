@@ -13,10 +13,9 @@ import com.zx.po.Emp;
 import com.zx.util.Md5Utils;
 
 
-public class EmpAccount implements IEmpAccount {
+public class EmpAccountImpl implements IEmpAccount {
 	private SessionFactory sf ;
 
-	
 	@Override
 	public Emp EmpLogin(int empId, String empPwd) {
 		Configuration config = new Configuration().configure();
@@ -32,5 +31,8 @@ public class EmpAccount implements IEmpAccount {
 		return e;
 		
 	}
+
+
+
 
 }

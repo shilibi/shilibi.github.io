@@ -10,7 +10,7 @@ import com.zx.po.Emp;
  * IEmpAccount.java
  * 下午8:49:41
  */
-public interface IEmpAccount {
+public interface IEmpAccountDao {
 
 	/*
 	 * 员工登录

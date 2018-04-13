@@ -7,11 +7,11 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
-import com.zx.dao.IGuestAccount;
+import com.zx.dao.IGuestAccountDao;
 import com.zx.po.Guest;
 import com.zx.util.Md5Utils;
 
-public class GuestAccountImpl implements IGuestAccount {
+public class GuestAccountDaoImpl implements IGuestAccountDao {
 
 	private SessionFactory sf ;
 

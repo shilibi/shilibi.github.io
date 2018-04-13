@@ -8,12 +8,12 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
 
-import com.zx.dao.IEmpAccount;
+import com.zx.dao.IEmpAccountDao;
 import com.zx.po.Emp;
 import com.zx.util.Md5Utils;
 
 
-public class EmpAccountImpl implements IEmpAccount {
+public class EmpAccountDaoImpl implements IEmpAccountDao {
 	private SessionFactory sf ;
 
 	@Override

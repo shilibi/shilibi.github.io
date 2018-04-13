@@ -1,11 +1,8 @@
 package com.zx.po;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name="room")
@@ -18,11 +15,11 @@ public class Room {
 	private char roomTv;
 	private char roomPc;
 	private String roomLct;
-	private char roomStatus;
-	private float roomArea;
+	private String roomStatus;
+	private String roomArea;
 	@Id
-	@GenericGenerator(name = "roomGenerator",strategy = "native")
-	@GeneratedValue(generator = "roomGenerator")
+/*	@GenericGenerator(name = "roomGenerator",strategy = "native")
+	@GeneratedValue(generator = "roomGenerator")*/
 	public int getRoomId() {
 		return roomId;
 	}
@@ -65,23 +62,24 @@ public class Room {
 	public void setRoomLct(String roomLct) {
 		this.roomLct = roomLct;
 	}
-	public char getRoomStatus() {
+	public String getRoomStatus() {
 		return roomStatus;
 	}
-	public void setRoomStatus(char roomStatus) {
+	public void setRoomStatus(String roomStatus) {
 		this.roomStatus = roomStatus;
 	}
-	public float getRoomArea() {
+	public String getRoomArea() {
 		return roomArea;
 	}
-	public void setRoomArea(float roomArea) {
+	public void setRoomArea(String roomArea) {
 		this.roomArea = roomArea;
 	}
 	@Override
 	public String toString() {
-		return "room [roomId=" + roomId + ", roomName=" + roomName + ", roomPrice=" + roomPrice + ", roomType="
+		return "Room [roomId=" + roomId + ", roomName=" + roomName + ", roomPrice=" + roomPrice + ", roomType="
 				+ roomType + ", roomTv=" + roomTv + ", roomPc=" + roomPc + ", roomLct=" + roomLct + ", roomStatus="
 				+ roomStatus + ", roomArea=" + roomArea + "]";
 	}
+
 	
 }

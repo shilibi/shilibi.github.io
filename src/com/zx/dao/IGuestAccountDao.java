@@ -2,7 +2,7 @@ package com.zx.dao;
 
 import com.zx.po.Guest;
 
-public interface IGuestAccount {
+public interface IGuestAccountDao {
 
 	
 	/*

@@ -10,31 +10,17 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
-import com.zx.dao.IRoomDao;
+import com.zx.dao.IFoodWaitDao;
+import com.zx.po.FoodWait;
 import com.zx.po.Room;
 
-public class RoomDaoImpl implements IRoomDao {
-
+public class FoodWaitDaoImpl implements IFoodWaitDao{
+	
 	private SessionFactory sf;
 	
 	@Override
-	public List<Room> selectRoom() {
-		Configuration config = new Configuration().configure();
-		ServiceRegistry sr = new StandardServiceRegistryBuilder().applySettings(config.getProperties()).build();
-		sf = new Configuration().configure().buildSessionFactory(sr);
-		String hql = " from Room";
-		Session session = sf.openSession();
-		Query query = session.createQuery(hql);
-		List<Room> roomList = query.list();
-		for(Room r:roomList) {
-			System.out.println(r.toString());
-		}
-		return roomList;
-	}
+	public boolean addFoodWait(FoodWait foodWait) {
 
-	@Override
-	public boolean addRoom(Room room) {
-	
 		Configuration configuration=new Configuration().configure();  
         //创建SessionFactory实例  
         SessionFactory sessionFactory=configuration.buildSessionFactory();  
@@ -45,7 +31,7 @@ public class RoomDaoImpl implements IRoomDao {
         try {  
             //用session开启事务进行数据插入  
             transaction=session.beginTransaction();  
-            session.save(room);  
+            session.save(foodWait);  
             //提交事务  
             transaction.commit();  
         } catch (Exception e) {  
@@ -63,7 +49,22 @@ public class RoomDaoImpl implements IRoomDao {
 	}
 
 	@Override
-	public boolean deleteRoom(int roomId) {
+	public List<FoodWait> selectFoodWait() {
+		Configuration config = new Configuration().configure();
+		ServiceRegistry sr = new StandardServiceRegistryBuilder().applySettings(config.getProperties()).build();
+		sf = new Configuration().configure().buildSessionFactory(sr);
+		String hql = " from FoodWait";
+		Session session = sf.openSession();
+		Query query = session.createQuery(hql);
+		List<FoodWait> foodWait = query.list();
+		for(FoodWait r:foodWait) {
+			System.out.println(r.toString());
+		}
+		return foodWait;
+	}
+
+	@Override
+	public boolean deleteFoodWait(FoodWait foodWait) {
 		Configuration configuration=new Configuration().configure();  
         //创建SessionFactory实例  
         SessionFactory sessionFactory=configuration.buildSessionFactory();  
@@ -74,7 +75,7 @@ public class RoomDaoImpl implements IRoomDao {
         try {  
             //用session开启事务进行数据删除
             transaction=session.beginTransaction();  
-            session.delete(roomId);  
+            session.delete(foodWait);  
             //提交事务  
             transaction.commit();  
         } catch (Exception e) {  
@@ -91,37 +92,26 @@ public class RoomDaoImpl implements IRoomDao {
 		return true;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 由于数据库设计方面将foodwaitName设置为主键，因此不可修改菜名，若修改需要先删除后再添加，谨记。
+	 * @see com.zx.dao.IFoodWaitDao#updateFoodWait(com.zx.po.FoodWait)
+	 */
 	@Override
-	public boolean updateRoom(Room room) {
+	public boolean updateFoodWait(FoodWait foodWait) {
 		Configuration configuration = new Configuration().configure();
 		SessionFactory sessionFactory = configuration.buildSessionFactory();
 		Session session = sessionFactory.openSession();
 		Transaction transaction = null;
 		try {
 			transaction = session.beginTransaction();
-			session.update(room);
+			session.update(foodWait);
 			transaction.commit();
 		} catch (Exception e) {
 			e.printStackTrace();
 			return false;
 		}
 		return true;
-	}
-
-	@Override
-	public List<Room> searchRoomByName(String roomName) {
-		Configuration config = new Configuration().configure();
-		ServiceRegistry sr = new StandardServiceRegistryBuilder().applySettings(config.getProperties()).build();
-		sf = new Configuration().configure().buildSessionFactory(sr);
-		String hql = " from Room where roomName like :roomName";
-		Session session = sf.openSession();
-		Query query = session.createQuery(hql).setString("roomName", "%"+roomName+"%");
-		List<Room> roomList = query.list();
-		for(Room r:roomList) {
-			System.out.println(r.toString());
-		}
-		session.close();
-		return roomList;		
 	}
 
 }

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="WebContent/css"/>
+	<classpathentry kind="src" path="WebContent/fonts"/>
+	<classpathentry kind="src" path="WebContent/images"/>
+	<classpathentry kind="src" path="WebContent/js"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JDK1.8">
 		<attributes>
 			<attribute name="owner.project.facets" value="java"/>

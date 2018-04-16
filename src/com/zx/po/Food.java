@@ -42,6 +42,23 @@ public class Food {
 	public void setFoodUnit(char foodUnit) {
 		this.foodUnit = foodUnit;
 	}
+	
+	public Food(int foodId, String foodName, float foodPrice, char foodUnit) {
+		super();
+		this.foodId = foodId;
+		this.foodName = foodName;
+		this.foodPrice = foodPrice;
+		this.foodUnit = foodUnit;
+	}
+	public Food(String foodName, float foodPrice, char foodUnit) {
+		super();
+		this.foodName = foodName;
+		this.foodPrice = foodPrice;
+		this.foodUnit = foodUnit;
+	}
+	public Food() {
+		super();
+	}
 	@Override
 	public String toString() {
 		return "food [foodId=" + foodId + ", foodName=" + foodName + ", foodPrice=" + foodPrice + ", foodUnit="

@@ -1,14 +1,24 @@
-import java.util.List;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.junit.Test;
 
 import com.zx.dao.IEmpAccountDao;
+import com.zx.dao.IFoodDao;
+import com.zx.dao.IFoodWaitDao;
 import com.zx.dao.IGuestAccountDao;
+import com.zx.dao.ILogRoomDao;
 import com.zx.dao.IRoomDao;
 import com.zx.dao.impl.EmpAccountDaoImpl;
+import com.zx.dao.impl.FoodDaoImpl;
+import com.zx.dao.impl.FoodWaitDaoImpl;
 import com.zx.dao.impl.GuestAccountDaoImpl;
+import com.zx.dao.impl.LogRoomDaoImpl;
 import com.zx.dao.impl.RoomDaoImpl;
+import com.zx.po.Food;
+import com.zx.po.FoodWait;
 import com.zx.po.Guest;
+import com.zx.po.LogRoom;
 import com.zx.po.Room;
 
 public class test {
@@ -51,10 +61,10 @@ public class test {
 	 */
 	@Test
 	public void testselectRoom() {
-		int roomId =6002;
+		
 		IRoomDao roomDao = new RoomDaoImpl();
-		Room r = roomDao.selectRoom(roomId);
-		System.out.println(r.toString());
+		roomDao.selectRoom();
+		
 	}
 
 	@Test
@@ -92,9 +102,120 @@ public class test {
 		
 	}
 	@Test
+	/*
+	 * 根据房间名查询
+	 * 
+	 */
 	public void testSearchRoomByName() {
 		String  roomName = "港";
 		IRoomDao roomDao = new RoomDaoImpl();
 		roomDao.searchRoomByName(roomName);
+	}
+	@Test
+	/*
+	 * 添加日志（写到数据库的触发器?)
+	 * 
+	 */
+	public void testAddLogRoom() {
+		LogRoom  logRoom = new LogRoom();
+		Date date = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		logRoom.setLogTime(sdf.format(date));
+		logRoom.setEmpId(100001);
+		logRoom.setLogOp("退房");
+		logRoom.setDeposit(200);
+		ILogRoomDao logRoomDao = new LogRoomDaoImpl();
+		logRoomDao.addLogRoom(logRoom);
+	}
+	/*
+	 *查询所有日志
+	 */
+	@Test
+	public void testSelectLogRoom() {
+		ILogRoomDao logRoomDao = new LogRoomDaoImpl();
+		logRoomDao.selectLogRoom();
+	}
+	/*
+	 * 根据输入查询日志
+	 */
+	@Test
+	public void testSearchLogRoomByContent() {
+		ILogRoomDao logRoomDao = new LogRoomDaoImpl();
+		logRoomDao.searchLogRoomByContent(null);
+	}
+	@Test
+	/*
+	 * 查看所有待审查食物
+	 * 
+	 */
+	public void testSelectFoodWait() {
+		IFoodWaitDao  foodWaitDao = new FoodWaitDaoImpl();
+		foodWaitDao.selectFoodWait();
+	}
+	@Test
+	/*
+	 * 测试添加待审查食物
+	 */
+	public void testAddFoodWait() {
+		FoodWait foodWait = new FoodWait();
+		foodWait.setFoodName("夫妻肺片");
+		IFoodWaitDao  foodWaitDao = new FoodWaitDaoImpl();
+		foodWaitDao.addFoodWait(foodWait);
+	}
+	@Test
+	/*
+	 * 测试更新待审查食物
+	 */
+	public void testUpdateFoodWait() {
+		FoodWait foodwait = new FoodWait("溜肥肠",99.9,'份',null,100001);
+		IFoodWaitDao  foodWaitDao = new FoodWaitDaoImpl();
+		foodWaitDao.updateFoodWait(foodwait);
+	}
+	@Test
+	/*
+	 * 测试删除待审查食物
+	 */
+	public void testDeleteFoodWait() {
+		FoodWait foodwait = new FoodWait("溜肥肠",99.9,'份',null,100001);
+		IFoodWaitDao  foodWaitDao = new FoodWaitDaoImpl();
+		foodWaitDao.deleteFoodWait(foodwait);
+	}
+
+	private IFoodDao foodDao = new FoodDaoImpl();
+	Food food = new Food(600024,"麻辣大龙虾",88,'份');
+	/*
+	 * 测试查看食物
+	 */
+	@Test 
+	public void testSelectFood() {
+		foodDao.selectFood();
+	}
+	/*
+	 * 测试添加食物
+	 */
+	@Test
+	public void testAddFood() {
+		foodDao.addFood(food);
+	}
+	/*
+	 * 测试更新食物
+	 */
+	@Test
+	public void testUpdateFood() {
+		foodDao.updateFood(food);
+	}
+	/*
+	 * 测试删除食物
+	 */
+	@Test
+	public void tesDeleteFood() {
+		foodDao.deleteFood(food);
+	}
+	/*
+	 * 测试查询食物
+	 */
+	@Test
+	public void testSelectFoodByContent() {
+		foodDao.selectFoodByContent("肉");
 	}
 }

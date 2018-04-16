@@ -15,11 +15,11 @@ public interface IRoomDao {
 	
 	
 	/*
-	 * 查询房间
-	 * 参数：roomId||roomName
+	 * 查看房间
+	 * 参数：null
 	 * 返回值：room
 	 */
-	Room selectRoom(int roomId);
+	List<Room> selectRoom();
 	/*
 	 * 添加房间
 	 * 参数；room

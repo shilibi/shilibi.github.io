@@ -26,10 +26,8 @@ public class EmpAccountDaoImpl implements IEmpAccountDao {
 		Session session = sf.openSession();
 		Query query = session.createQuery(hql).setInteger("empId", empId).setString("empPwd", empPwd);
 		Emp e = (Emp) query.uniqueResult();
-		System.out.println(e.toString());
 		session.close();
 		return e;
-		
 	}
 
 

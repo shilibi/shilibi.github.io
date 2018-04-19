@@ -19,7 +19,6 @@ public interface IFoodDao {
 	 * 返回值：boolean
 	 */
 	boolean addFood(Food food);
-	
 	/*
 	 * 删除食品
 	 * 参数：Food 

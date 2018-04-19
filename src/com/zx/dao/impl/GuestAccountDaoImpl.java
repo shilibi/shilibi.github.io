@@ -23,8 +23,8 @@ public class GuestAccountDaoImpl implements IGuestAccountDao {
 		String hql = " from Guest where guestPhone = :guestPhone  and guestPwd = MD5(:guestPwd)";
 		Session session = sf.openSession();
 		Query query = session.createQuery(hql).setString("guestPhone", guestPhone).setString("guestPwd", guestPwd);
-		Guest g = (Guest) query.uniqueResult();
-		System.out.println(g.toString());
+		Guest g = null;
+		g = (Guest) query.uniqueResult();
 		session.close();
 		return g;
 		
@@ -40,7 +40,7 @@ public class GuestAccountDaoImpl implements IGuestAccountDao {
 	        //获取一个全新的session对象  
 	        Session session=sessionFactory.openSession();  
 	        //创建一个事务  
-	        org.hibernate.Transaction transaction=null;
+	        org.hibernate.Transaction transaction = null;
 	        try {  
 	            //用session开启事务进行数据插入  
 	            transaction=session.beginTransaction();  

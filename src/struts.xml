@@ -4,11 +4,6 @@
 <constant name="struts.custom.i18n.resources" value="messages" />
 	<constant name="struts.ui.theme" value="simple" />
 	<package name="default" namespace="/" extends="struts-default">
-		<!-- 	1声明拦截器-->	
- 		<interceptors >
- 			<interceptor name="loginintercept"  class="com.zx.action.GuestAction"></interceptor>
- 		</interceptors>
- 		
 		<action name="guestRegister" class="com.zx.action.GuestRegisterAction">
 				<result name="success">/Page/welcome.jsp</result>
 				<result name="error">/Page/error.jsp</result>
@@ -20,20 +15,6 @@
 		<action name="guestLogin" class="com.zx.action.GuestLoginAction">
 				<result name="success">/Page/welcome.jsp</result>
 				<result name="error">/Page/error.jsp</result>
-		</action>
-		<action name="guestLogin" class="com.zx.action.GuestAction" method="login"> 
-				<!-- 2使用自定义拦截器-->	
-				<interceptor-ref name="com.zx.action.GuestAction">
-					<!-- 配置action里面某些方法不进行拦截
-						name:excludeMethods
-						值：action里面不拦截的方法名称
-					 -->
-					<param name="excludeMethods">login</param>
-				</interceptor-ref>	
-				<!-- 3。把默认拦截器手动使用一次 -->
-				<interceptor-ref name="defaultStack"></interceptor-ref>
-				<result name="loginsuccess">/Page/welcome.jsp</result>
-				<result name="login" >/Page/form1.jsp</result>
 		</action>
 	</package>
 </struts>    

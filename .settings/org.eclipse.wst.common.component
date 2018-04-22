@@ -2,6 +2,9 @@
     <wb-module deploy-name="Hotels">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/WebContent/resource/css"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/WebContent/resource/fonts"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/WebContent/resource/js"/>
         <property name="context-root" value="Hotels"/>
         <property name="java-output-path" value="/Hotels/build/classes"/>
     </wb-module>

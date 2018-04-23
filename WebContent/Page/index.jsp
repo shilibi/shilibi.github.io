@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -11,14 +13,7 @@
   <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">  
   <link href="css/flexslider.css" rel="stylesheet">
   <link href="css/templatemo-style.css" rel="stylesheet">
-
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+  <link rel="stylesheet" href="assets/css/form-elements.css">
   </head>
   <body class="tm-gray-bg">
   	<!-- Header -->
@@ -34,14 +29,12 @@
 		            </div>
 	  				<nav class="tm-nav">
 						<ul>
-							<li><a href="index.html" class="active">首页</a></li>
+							<li><a href="index.jsp" class="active">首页</a></li>
 							<li><a href="about.html">关于</a></li>
-							<li><a href="tours.html">注册</a></li>
-							<li><a href="tours.html">登陆</a></li>	
-					</nav>
-							<div class="top-big-link">
-                            	<a class="btn btn-link-1 launch-modal" href="#" data-modal-id="modal-register">Launch modal</a>
-                            </div>
+                            <li><a class="btn btn-link-1 launch-modal" href="#" data-modal-id="modal-register" >注册</a></li>
+                    	    <li><a class="btn btn-link-1 launch-modal" href="#" data-modal-id="modal-login" >登录</a></li>
+                            
+                    </nav>
 	  			</div>				
   			</div>
   		</div>	  	
@@ -359,33 +352,66 @@
         			
         			<div class="modal-header">
         				<button type="button" class="close" data-dismiss="modal">
-        					<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+        					<span aria-hidden="true">&times;</span><span class="sr-only">关闭</span>
         				</button>
-        				<h3 class="modal-title" id="modal-register-label">Sign up now</h3>
-        				<p>Fill in the form below to get instant access:</p>
+        				<h3 class="modal-title" id="modal-register-label">注册</h3>
+        				<p>请填写一下表格内容:</p>
         			</div>
         			
         			<div class="modal-body">
         				
-	                    <form role="form" action="" method="post" class="registration-form">
+	                    <form role="form" action="${pageContext.request.contextPath}/guestRegister.action" method="post" class="registration-form">
 	                    	<div class="form-group">
-	                    		<label class="sr-only" for="form-first-name">First name</label>
-	                        	<input type="text" name="form-first-name" placeholder="First name..." class="form-first-name form-control" id="form-first-name">
+	                    		<label class="sr-only" for="form-first-name">请输入您的手机号...</label>
+	                        	<input type="text" id="guestPhone" name="guestPhone" placeholder="请输入您的手机号..." class="form-first-name form-control" id="form-first-name">
+	                        </div>
+	           				<!--  <div>
+						        <label class="radio-inline">
+									 <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 男
+								</label>
+								<label class="radio-inline">
+								 	 <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 女
+								</label>
+	          			    </div> -->
+	                        <div class="form-group">
+	                        	<label class="sr-only" for="form-last-name">请输入密码...</label>
+	                        	<input type="text" id="guestPwd" name="guestPwd" placeholder="请输入密码..." class="form-last-name form-control" id="form-last-name">
 	                        </div>
 	                        <div class="form-group">
-	                        	<label class="sr-only" for="form-last-name">Last name</label>
-	                        	<input type="text" name="form-last-name" placeholder="Last name..." class="form-last-name form-control" id="form-last-name">
+	                        	<label class="sr-only" for="form-email">再次输入密码...</label>
+	                        	<input type="text" id="guestPwd_confirm" name="guestPwd_confirm" placeholder="再次输入密码..." class="form-email form-control" id="form-email">
+	                        </div>
+	                        <button onclick="checkPasswords()" type="submit" class="btn" >现&nbsp;在&nbsp;注&nbsp;册!</button>
+	                    </form>
+	                    
+        			</div>
+        			
+        		</div>
+        	</div>
+        </div>
+         <div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="modal-register-label" aria-hidden="true">
+        	<div class="modal-dialog">
+        		<div class="modal-content">
+        			
+        			<div class="modal-header">
+        				<button type="button" class="close" data-dismiss="modal">
+        					<span aria-hidden="true">&times;</span><span class="sr-only">关闭</span>
+        				</button>
+        				<h3 class="modal-title" id="modal-register-label">登录</h3>
+        				<p>请填写一下表格内容:</p>
+        			</div>
+        			
+        			<div class="modal-body">
+	                    <form role="form" action="${pageContext.request.contextPath}/guestLogin.action" method="post" class="registration-form">
+	                    	<div class="form-group">
+	                    		<label class="sr-only" for="form-first-name">请输入您的手机号...</label>
+	                        	<input type="text" id="guestPhone" name="guestPhone" placeholder="请输入您的手机号..." class="form-first-name form-control" id="form-first-name">
 	                        </div>
 	                        <div class="form-group">
-	                        	<label class="sr-only" for="form-email">Email</label>
-	                        	<input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email">
+	                        	<label class="sr-only" for="form-last-name">请输入密码...</label>
+	                        	<input type="text" id="guestPwd" name="guestPwd" placeholder="请输入密码..." class="form-last-name form-control" id="form-last-name">
 	                        </div>
-	                        <div class="form-group">
-	                        	<label class="sr-only" for="form-about-yourself">About yourself</label>
-	                        	<textarea name="form-about-yourself" placeholder="About yourself..." 
-	                        				class="form-about-yourself form-control" id="form-about-yourself"></textarea>
-	                        </div>
-	                        <button type="submit" class="btn">Sign me up!</button>
+	                        <button onclick="checkPasswords()" type="submit" class="btn" >登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录</button>
 	                    </form>
 	                    
         			</div>
@@ -407,11 +433,9 @@
   	<script type="text/javascript" src="js/moment.js"></script>							<!-- moment.js -->
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>					<!-- bootstrap js -->
 	<script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>	<!-- bootstrap date time picker js, http://eonasdan.github.io/bootstrap-datetimepicker/ -->
+	<script src="assets/js/jquery.backstretch.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
 	<script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
-<!--
-	<script src="js/froogaloop.js"></script>
-	<script src="js/jquery.fitvid.js"></script>
--->
      <script src="assets/js/scripts.js"></script>
    	<script type="text/javascript" src="js/templatemo-script.js"></script>      		<!-- Templatemo Script -->
 	<script>
@@ -442,7 +466,6 @@
 			    }
 		  	});
 		});
-		
 		// Load Flexslider when everything is loaded.
 		$(window).load(function() {	  		
 			// Vimeo API nonsense
@@ -500,5 +523,15 @@
 
 	  	});
 	</script>
+	<script>
+	function checkPasswords() {
+        var pass1 = document.getElementById("guestPwd");
+        var pass2 = document.getElementById("guestPwd_confirm");
+        if (pass1.value != pass2.value){
+           alert("两次输入的密码不匹配");
+       	   guestPwd.value="";
+      	   guestPwd_confirm.value="";
+      	   }
+    }</script>
  </body>
  </html>

@@ -20,6 +20,7 @@ import com.zx.po.FoodWait;
 import com.zx.po.Guest;
 import com.zx.po.LogRoom;
 import com.zx.po.Room;
+import com.zx.util.DateTime;
 
 public class test {
 
@@ -51,7 +52,7 @@ public class test {
 	 */
 	public void testGuestRegister()
 	{
-		Guest guest = new Guest("黄仁勋","123456","male","身份证","178151425562124978","15544845878");
+		Guest guest = new Guest("黄仁勋","123456","male","身份证","178151425572124978","15555845878",null,null);
 		IGuestAccountDao guestDao = new GuestAccountDaoImpl();
 		guestDao.GuestRegister(guest);
 		System.out.println(guest.toString());
@@ -218,4 +219,14 @@ public class test {
 	public void testSelectFoodByContent() {
 		foodDao.selectFoodByContent("肉");
 	}
-}
+	/*@Test*/
+	/*
+	 * 测试时间输出类型
+	 */
+	/*public void testDateTime() {
+		Date date = new Date();
+		DateTime dateTime = new DateTime();
+		int secondTimestamp = dateTime.getSecondTimestamp(date);
+		System.out.println(secondTimestamp);
+	}
+*/}

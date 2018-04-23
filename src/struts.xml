@@ -4,7 +4,7 @@
 <constant name="struts.custom.i18n.resources" value="messages" />
 	<constant name="struts.ui.theme" value="simple" />
 	<package name="default" namespace="/" extends="struts-default">
-		<action name="guestRegister" class="com.zx.action.GuestRegisterAction">
+		<action name="guestRegister" class="com.zx.action.GuestAction" method="register">
 				<result name="success">/Page/welcome.jsp</result>
 				<result name="error">/Page/error.jsp</result>
 		</action>
@@ -12,8 +12,12 @@
 				<result name="success">/Page/welcome.jsp</result>
 				<result name="error">/Page/error.jsp</result>
 		</action>
-		<action name="guestLogin" class="com.zx.action.GuestLoginAction">
-				<result name="success">/Page/welcome.jsp</result>
+		<action name="guestLogin" class="com.zx.action.GuestAction" method="execute">
+				<result name="success" type="redirect">/Page/Console/index.html</result>
+				<result name="error">/Page/error.jsp</result>
+		</action>
+		<action name="guestLogin" class="com.zx.action.GuestAction" method="execute">
+				<result name="success" type="redirect">/Page/Console/index.html</result>
 				<result name="error">/Page/error.jsp</result>
 		</action>
 	</package>

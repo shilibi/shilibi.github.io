@@ -1,5 +1,7 @@
 package com.zx.po;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -16,7 +18,7 @@ public class Emp {
 	private String empSex;
 	private String empPhone;
 	private String empJob;
-	
+	private Date empLastLoginTime;
 	@Id//主键
 	@GenericGenerator(name="myGenerator",strategy="native")//主键自增
 	@GeneratedValue(generator="myGenerator")
@@ -56,11 +58,18 @@ public class Emp {
 	public void setEmpJob(String empJob) {
 		this.empJob = empJob;
 	}
+	public Date getEmpLastLoginTime() {
+		return empLastLoginTime;
+	}
+	public void setEmpLastLoginTime(Date empLastLoginTime) {
+		this.empLastLoginTime = empLastLoginTime;
+	}
 	@Override
 	public String toString() {
 		return "Emp [empId=" + empId + ", empPwd=" + empPwd + ", empName=" + empName + ", empSex=" + empSex
-				+ ", empPhone=" + empPhone + ", empJob=" + empJob + "]";
+				+ ", empPhone=" + empPhone + ", empJob=" + empJob + ", empLastLoginTime=" + empLastLoginTime + "]";
 	}
+
 	
 
 }

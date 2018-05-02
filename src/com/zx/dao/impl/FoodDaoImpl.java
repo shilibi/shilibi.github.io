@@ -11,6 +11,7 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
 import com.zx.dao.IFoodDao;
+import com.zx.po.Emp;
 import com.zx.po.Food;
 import com.zx.po.Room;
 
@@ -102,7 +103,8 @@ public class FoodDaoImpl implements IFoodDao {
 			e.printStackTrace();
 			return false;
 		}
-		return true;	}
+		return true;	
+	}
 
 	@Override
 	public List<Food> selectFoodByContent(String foodContent) {
@@ -118,5 +120,19 @@ public class FoodDaoImpl implements IFoodDao {
 		}
 		session.close();
 		return foodList;		}
+
+	@Override
+	public Food searchFoodByFoodId(int foodId) {
+		Configuration config = new Configuration().configure();
+		ServiceRegistry sr = new StandardServiceRegistryBuilder().applySettings(config.getProperties()).build();
+		sf = new Configuration().configure().buildSessionFactory(sr);
+		//String md5 = Md5Utils.md5(empPwd);
+		String hql = " from Food where foodId = :foodId";
+		Session session = sf.openSession();
+		Query query = session.createQuery(hql).setInteger("foodId", foodId);
+		Food f = (Food) query.uniqueResult();
+		session.close();
+		return f;
+	}
 
 }

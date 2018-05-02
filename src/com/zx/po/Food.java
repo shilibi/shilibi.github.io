@@ -13,7 +13,7 @@ public class Food {
 	
 	private int foodId;
 	private String foodName;
-	private float foodPrice;
+	private int foodPrice;
 	private char foodUnit;
 	@Id
 	@GenericGenerator(name="foodGenerator",strategy="native")//主键自增
@@ -30,10 +30,11 @@ public class Food {
 	public void setFoodName(String foodName) {
 		this.foodName = foodName;
 	}
-	public float getFoodPrice() {
+
+	public int getFoodPrice() {
 		return foodPrice;
 	}
-	public void setFoodPrice(float foodPrice) {
+	public void setFoodPrice(int foodPrice) {
 		this.foodPrice = foodPrice;
 	}
 	public char getFoodUnit() {
@@ -43,14 +44,14 @@ public class Food {
 		this.foodUnit = foodUnit;
 	}
 	
-	public Food(int foodId, String foodName, float foodPrice, char foodUnit) {
+	public Food(int foodId, String foodName, int foodPrice, char foodUnit) {
 		super();
 		this.foodId = foodId;
 		this.foodName = foodName;
 		this.foodPrice = foodPrice;
 		this.foodUnit = foodUnit;
 	}
-	public Food(String foodName, float foodPrice, char foodUnit) {
+	public Food(String foodName, int foodPrice, char foodUnit) {
 		super();
 		this.foodName = foodName;
 		this.foodPrice = foodPrice;

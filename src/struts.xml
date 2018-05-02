@@ -12,13 +12,49 @@
 				<result name="success">/Page/welcome.jsp</result>
 				<result name="error">/Page/error.jsp</result>
 		</action>
-		<action name="guestLogin" class="com.zx.action.GuestAction" method="execute">
+		<!-- 	<action name="guestLogin" class="com.zx.action.GuestAction" method="execute">
 				<result name="success" type="redirect">/Page/Console/index.html</result>
 				<result name="error">/Page/error.jsp</result>
+		</action> -->
+		<action name="guestLogin" class="com.zx.action.GuestAction" method="login">
+				<result name="loginsuccess" type="redirect">/Page/Console/index.jsp</result>
+				<result name="login">/Page/error.jsp</result>
 		</action>
-		<action name="guestLogin" class="com.zx.action.GuestAction" method="execute">
-				<result name="success" type="redirect">/Page/Console/index.html</result>
-				<result name="error">/Page/error.jsp</result>
-		</action>
+		 <action name="list" class="com.zx.action.EmpAction" method="list" >			
+			<result name="success">/Page/Console/message-task.jsp</result>
+ 	 	</action> 
+ 	 	 <action name="update_get" class="com.zx.action.EmpAction" method="EmpInfo" >
+			<result name="success">/Page/Console/form.jsp</result>
+ 	 	</action>
+ 	 	<action name="delete" class="com.zx.action.EmpAction" method="deleteEmp">
+ 	 				<result name="success"  type="redirectAction">/Page/Console/list</result>
+ 	 				<result name="error">/Page/Console/error.html</result>
+ 	 	</action>
+ 	 	 <action name="update" class="com.zx.action.EmpAction" method="updateEmpInfo" >
+ 	 				<result name="success"  type="redirectAction">/Page/Console/list</result>
+ 	 				<result name="error">/Page/Console/error.html</result>
+ 	 	</action>
+ 	 	<action name="search" class="com.zx.action.EmpAction" method="searchEmpInfo" >
+ 	 				<result name="success">/Page/Console/message-task.jsp</result>
+ 	 	</action>
+ 	 	<action name="addFood" class="com.zx.action.FoodAction" method="addFood">
+ 	 	</action>
+ 	 	<action name="roomList" class="com.zx.action.RoomAction" method="list">
+ 	 	 	 <result name="success">/Page/Console/roomList.jsp</result>
+ 	 	</action>
+ 	 	<action name="update_getRoom" class="com.zx.action.RoomAction" method="roomInfo">
+ 	 	 	 <result name="success">/Page/Console/roomInfo.jsp</result>
+ 	 	</action>
+ 	 	<action name="updateRoom" class="com.zx.action.RoomAction" method="updateRoom">
+ 	 	 	 <result name="success"  type="redirectAction">/Page/Console/roomList</result> 	
+			 <result name="error">/Page/Console/error.html</result>
+ 	 	</action>
+ 	 	<action name="deleteRoom" class="com.zx.action.RoomAction" method="deleteRoom">
+ 	 				<result name="success"  type="redirectAction">/Page/Console/list</result>
+ 	 				<result name="error">/Page/Console/error.html</result>
+ 	 	</action>
+ 	 	<!-- <action name="getTotalSale" class="com.zx.action.FoodAction" method="getTotalSale">
+ 	 	 	 <result name="success">/Page/Console/index.jsp</result>
+ 	 	</action> -->
 	</package>
 </struts>    

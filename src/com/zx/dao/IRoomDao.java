@@ -46,6 +46,25 @@ public interface IRoomDao {
 	 * 
 	 */
 	List<Room> searchRoomByName(String roomName);
-	
-	
+	/*
+	 * 根据房间id搜索
+	 * 参数：int empId
+	 * 返回值：Room
+	 */
+	Room searchRoomByRoomId(int roomId);
+	/*
+	 * 查询今日入住收入金额
+	 * 参数：null
+	 * 返回值：int
+	 */
+	int searchTodayRoomSale();
+	/*
+	 * 查询今日入住房间数
+	 * 参数：null
+	 * 返回值：int
+	 */
+	int searchTodayRoomSaleNo();
+	/*
+	 * 查询指定日期入住房间数
+	 */
 }

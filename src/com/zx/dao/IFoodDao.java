@@ -37,5 +37,10 @@ public interface IFoodDao {
 	 * 返回值：List<Food>
 	 */
 	List<Food> selectFoodByContent(String foodContent);
-	
+	/*
+	 * 根据id查询食品
+	 * 参数:int foodId
+	 * 返回值：Food
+	 */
+	Food searchFoodByFoodId(int foodId);
 }

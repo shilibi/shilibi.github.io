@@ -10,8 +10,8 @@ public class Room {
 
 	private int roomId;
 	private String roomName;
-	private float roomPrice;
-	private char roomType;
+	private int roomPrice;
+	private String roomType;
 	private char roomTv;
 	private char roomPc;
 	private String roomLct;
@@ -32,16 +32,16 @@ public class Room {
 	public void setRoomName(String roomName) {
 		this.roomName = roomName;
 	}
-	public float getRoomPrice() {
+	public int getRoomPrice() {
 		return roomPrice;
 	}
-	public void setRoomPrice(float roomPrice) {
+	public void setRoomPrice(int roomPrice) {
 		this.roomPrice = roomPrice;
 	}
-	public char getRoomType() {
+	public String getRoomType() {
 		return roomType;
 	}
-	public void setRoomType(char roomType) {
+	public void setRoomType(String roomType) {
 		this.roomType = roomType;
 	}
 	public char getRoomTv() {

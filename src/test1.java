@@ -5,24 +5,27 @@ import org.junit.Test;
 
 import com.zx.dao.IEmpAccountDao;
 import com.zx.dao.IFoodDao;
+import com.zx.dao.IFoodSaleDao;
 import com.zx.dao.IFoodWaitDao;
 import com.zx.dao.IGuestAccountDao;
 import com.zx.dao.ILogRoomDao;
 import com.zx.dao.IRoomDao;
 import com.zx.dao.impl.EmpAccountDaoImpl;
 import com.zx.dao.impl.FoodDaoImpl;
+import com.zx.dao.impl.FoodSaleDaoImpl;
 import com.zx.dao.impl.FoodWaitDaoImpl;
 import com.zx.dao.impl.GuestAccountDaoImpl;
 import com.zx.dao.impl.LogRoomDaoImpl;
 import com.zx.dao.impl.RoomDaoImpl;
+import com.zx.po.Emp;
 import com.zx.po.Food;
 import com.zx.po.FoodWait;
 import com.zx.po.Guest;
 import com.zx.po.LogRoom;
 import com.zx.po.Room;
-import com.zx.util.DateTime;
+import com.zx.util.Md5Utils;
 
-public class test {
+public class test1 {
 
 	@Test
 	/*
@@ -33,7 +36,7 @@ public class test {
 		//e.setEmpId(100000);
 		//e.setEmpPwd("123456");
 		IEmpAccountDao empDao = new EmpAccountDaoImpl();
-		empDao.EmpLogin(100000, "123456");
+		empDao.EmpLoginRoom("100000", "123456");
 	}
 	
 	@Test
@@ -229,4 +232,50 @@ public class test {
 		int secondTimestamp = dateTime.getSecondTimestamp(date);
 		System.out.println(secondTimestamp);
 	}
-*/}
+	
+*/
+	IEmpAccountDao empAccountDao = new EmpAccountDaoImpl();
+	@Test
+	public void testAddEmp() {
+		Emp emp = new Emp();
+		emp.setEmpPwd("123456");
+		boolean flag = empAccountDao.addEmp(emp);
+		if(flag==true) {
+			System.out.println("success");
+		}else {
+			System.out.println("error");
+		}
+	}	
+	@Test
+	public void testUpdateEmp() {
+		Emp emp = new Emp();
+		emp.setEmpId("100014");
+		emp.setEmpPwd("123456");
+		emp.setEmpPwd(Md5Utils.md5(emp.getEmpPwd()));
+		emp.setEmpDepart(8888);
+		empAccountDao.updateEmp(emp);
+	}	
+	@Test
+	public void testDeleteEmp() {
+		boolean flag = empAccountDao.deleteEmp("100017");
+		if(flag==true) {
+			System.out.println("success");
+		}else {
+			System.out.println("error");
+		}
+	}	
+	@Test
+	public void testSearchAllEmp() {
+	 empAccountDao.SearchAllEmp();
+	}	
+	@Test
+	public void testSearchEmpByInfo() {
+		 empAccountDao.SearchEmpByInfo("刀");
+		}	
+	@Test
+	public void testSearchFoodSaleByDate(){
+		IFoodSaleDao foodSaleDao = new FoodSaleDaoImpl();
+		int searchTotalFoodSale = foodSaleDao.searchTotalFoodSale("2018-05-22");
+		System.out.println(searchTotalFoodSale);
+	}
+}

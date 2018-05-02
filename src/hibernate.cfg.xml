@@ -41,20 +41,7 @@
 		<mapping class="com.zx.po.Guest"/>
 		<mapping class="com.zx.po.Room"/>
 		<mapping class="com.zx.po.LogRoom"/>
-		<!-- <hibernate-mapping>
-		<class name="com.zx.LogRoom">
-			<id name="logId" colume="id">
-				<generator class="native">
-				</generator>
-			</id>
-		<property name="guestName">
-		</property>
-		</class>
-		<class name="com.zx.po.Guest">
-			<id name="guestId" column="guestId"></id>
-			<propertuy name="guestName"></propertuy>
-			<many-to-one name="guestId" column="guestId" unique="true"></many-to-one>
-		</class>
-		</hibernate-mapping>  -->
+		<mapping class="com.zx.po.DepartEmp"/>
+		<mapping class="com.zx.po.FoodSale"/>
 	</session-factory>
 </hibernate-configuration>

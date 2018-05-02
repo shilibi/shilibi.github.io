@@ -17,24 +17,22 @@ public class EmpLoginAction extends ActionSupport  {
 	/**
 	 * 
 	 */
-	private int empId;
+	private String empId;
 	private String empPwd;
 	
 
-	public int getEmpId() {
+	public String getEmpId() {
 		return empId;
 	}
 
 
-	public void setEmpId(int empId) {
+	public void setEmpId(String empId) {
 		this.empId = empId;
 	}
-
 
 	public String getEmpPwd() {
 		return empPwd;
 	}
-
 
 	public void setEmpPwd(String empPwd) {
 		this.empPwd = empPwd;
@@ -44,7 +42,7 @@ public class EmpLoginAction extends ActionSupport  {
 	public String execute() throws Exception {
 		IEmpAccountDao empAccountDao = new EmpAccountDaoImpl();
 		Emp e = null;
-		e = empAccountDao.EmpLogin(empId, empPwd);
+		e = empAccountDao.EmpLoginRoom(empId, empPwd);
 		if(e == null) {
 			return ERROR;
 		}

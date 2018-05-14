@@ -6,7 +6,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>模板之家</title>
+<title> XXXX酒店</title>
 
 <!-- BOOTSTRAP STYLES-->
 <link href="assets/css/bootstrap.css" rel="stylesheet" />
@@ -31,7 +31,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.html">COMPANY NAME</a>
+				<a class="navbar-brand" href="index.html">XXXX酒店</a>
 			</div>
 
 			<div class="header-right">
@@ -46,105 +46,50 @@
 			</div>
 		</nav>
 		<!-- /. NAV TOP  -->
-		<nav class="navbar-default navbar-side" role="navigation">
-			<div class="sidebar-collapse">
-				<ul class="nav" id="main-menu">
-					<li>
-						<div class="user-img-div">
-							<img src="assets/img/user.png" class="img-thumbnail" />
+			        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li>
+                        <div class="user-img-div">
+                            <img src="assets/img/user.png" class="img-thumbnail" />
+                            <div class="inner-text">
+                            		欢迎！${empName } 
+                            <br />
+                                <small>上次登录：${empLastLoginTime } </small>
+                            </div>
+                        </div>
 
-							<div class="inner-text">
-								Jhon Deo Alex <br /> <small>Last Login : 2 Weeks Ago </small>
-							</div>
-						</div>
-
-					</li>
-
-
-					<li><a href="index.html"><i class="fa fa-dashboard "></i>Dashboard</a>
-					</li>
-					<li><a href="#"><i class="fa fa-desktop "></i>UI Elements
-							<span class="fa arrow"></span></a>
-						<ul class="nav nav-second-level">
-							<li><a href="panel-tabs.html"><i class="fa fa-toggle-on"></i>Tabs
-									& Panels</a></li>
-							<li><a href="notification.html"><i class="fa fa-bell "></i>Notifications</a>
-							</li>
-							<li><a href="progress.html"><i class="fa fa-circle-o "></i>Progressbars</a>
-							</li>
-							<li><a href="buttons.html"><i class="fa fa-code "></i>Buttons</a>
-							</li>
-							<li><a href="icons.html"><i class="fa fa-bug "></i>Icons</a>
-							</li>
-							<li><a href="wizard.html"><i class="fa fa-bug "></i>Wizard</a>
-							</li>
-							<li><a href="typography.html"><i class="fa fa-edit "></i>Typography</a>
-							</li>
-							<li><a href="grid.html"><i class="fa fa-eyedropper "></i>Grid</a>
-							</li>
+                    </li>
 
 
-						</ul></li>
-					<li><a class="active-menu-top" href="#"><i
-							class="fa fa-yelp "></i>Extra Pages <span class="fa arrow"></span></a>
-						<ul class="nav nav-second-level collapse in">
-							<li><a href="invoice.html"><i class="fa fa-coffee"></i>Invoice</a>
-							</li>
-							<li><a href="pricing.html"><i class="fa fa-flash "></i>Pricing</a>
-							</li>
-							<li><a href="component.html"><i class="fa fa-key "></i>Components</a>
-							</li>
-							<li><a href="social.html"><i class="fa fa-send "></i>Social</a>
-							</li>
+                    <li>
+                        <a  href="index_admin.jsp"><i class="fa fa-dashboard "></i>收入</a>
+                    </li>
+                     <li>
+                        <a href="addFood.action"><i class="fa fa-yelp "></i>菜品管理 <span class="fa arrow"></span></a>
+                         <ul class="nav nav-second-level">
+                            <li>
+                                <a href="passFood.action"><i class="fa fa-coffee"></i>审核菜品</a>
+                            </li> 
+                            <li>
+                                <a href="foodList.action"><i class="fa fa-key "></i>查看菜品</a>
+                            </li>
+                            <li>
+                                <a class="active-menu" href="pricing.html"><i class="fa fa-flash "></i>更改/删除菜品</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="list.action"  class="active-menu"><i class="fa fa-anchor "></i>员工管理</a>
+                    </li>
+                     <li>
+                        <a href="roomList.action"><i class="fa fa-anchor "></i>房间管理</a>
+                    </li>
+                </ul>
 
-							<li><a class="active-menu" href="message-task.jsp"><i
-									class="fa fa-recycle "></i>Messages & Tasks</a></li>
+            </div>
 
-
-						</ul></li>
-					<li><a href="table.html"><i class="fa fa-flash "></i>Data
-							Tables </a></li>
-					<li><a href="#"><i class="fa fa-bicycle "></i>Forms <span
-							class="fa arrow"></span></a>
-						<ul class="nav nav-second-level">
-
-							<li><a href="form.html"><i class="fa fa-desktop "></i>Basic
-							</a></li>
-							<li><a href="form-advance.html"><i class="fa fa-code "></i>Advance</a>
-							</li>
-
-
-						</ul></li>
-					<li><a href="gallery.html"><i class="fa fa-anchor "></i>Gallery</a>
-					</li>
-					<li><a href="error.html"><i class="fa fa-bug "></i>Error
-							Page</a></li>
-					<li><a href="login.html"><i class="fa fa-sign-in "></i>Login
-							Page</a></li>
-					<li><a href="#"><i class="fa fa-sitemap "></i>Multilevel
-							Link <span class="fa arrow"></span></a>
-						<ul class="nav nav-second-level">
-							<li><a href="#"><i class="fa fa-bicycle "></i>Second
-									Level Link</a></li>
-							<li><a href="#"><i class="fa fa-flask "></i>Second Level
-									Link</a></li>
-							<li><a href="#">Second Level Link<span class="fa arrow"></span></a>
-								<ul class="nav nav-third-level">
-									<li><a href="#"><i class="fa fa-plus "></i>Third Level
-											Link</a></li>
-									<li><a href="#"><i class="fa fa-comments-o "></i>Third
-											Level Link</a></li>
-
-								</ul></li>
-						</ul></li>
-
-					<li><a href="blank.html"><i class="fa fa-square-o "></i>Blank
-							Page</a></li>
-				</ul>
-			</div>
-
-		</nav>
-		<!-- /. NAV SIDE  -->
+        </nav>		<!-- /. NAV SIDE  -->
 		<div id="page-wrapper">
 			<div id="page-inner">
 				<div class="row">
@@ -157,7 +102,9 @@
 									<input type="text" class="form-control" placeholder="输入关键字" name="info"  id="info"/> <span class="input-group-btn"> 
 									 <a class="btn btn-primary"  href="javascript:jump()"> 
 										<i class="fa fa-gear fa-spin"></i>&nbsp;&nbsp;搜索
-									</a>
+									</a>	
+									<button class="btn btn-inverse" name="addEmp" id="addEmp" onclick="{location.href='addEmp.jsp'}">
+											<i class="glyphicon glyphicon-plus" ></i>添加员工</button>
 									</span>
 								</div>
 <!-- 							</form>
@@ -167,135 +114,13 @@
 
 					</div>
 				</div>
-				<!-- /. ROW  -->
-				<!--    <div class="row">
-                   <div class="col-md-6">
-
-                        <div class="panel panel-success">
-                            <div class="panel-heading">
-                               Message Box #1
-                            </div>
-                            <div class="panel-body" style="padding: 0px;">
-                                <div class="chat-widget-main">
-
-
-                                    <div class="chat-widget-left">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    </div>
-                                    <div class="chat-widget-name-left">
-                                        <h4>Amanna Seiar</h4>
-                                    </div>
-                                    <div class="chat-widget-right">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    </div>
-                                    <div class="chat-widget-name-right">
-                                        <h4>Donim Cruseia </h4>
-                                    </div>
-                                    <div class="chat-widget-left">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    </div>
-                                    <div class="chat-widget-name-left">
-                                        <h4>Amanna Seiar</h4>
-                                    </div>
-                                    <div class="chat-widget-right">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    </div>
-                                    <div class="chat-widget-name-right">
-                                        <h4>Donim Cruseia </h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel-footer">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Enter Message" />
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-success" type="button">SEND</button>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-                    <div class="col-md-6">
-                        <div class="panel panel-info">
-                            <div class="panel-heading">
-                                <i class="fa fa-bell fa-fw"></i>Message Box #2
-                            </div>
-
-                            <div class="panel-body">
-                                <div class="list-group">
-
-                                    <a href="#" class="list-group-item">
-                                        <i class="fa fa-twitter fa-fw"></i>3 New Followers
-                                    <span class="pull-right text-muted small"><em>12 minutes ago</em>
-                                    </span>
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <i class="fa fa-envelope fa-fw"></i>Message Sent
-                                    <span class="pull-right text-muted small"><em>27 minutes ago</em>
-                                    </span>
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <i class="fa fa-tasks fa-fw"></i>New Task
-                                    <span class="pull-right text-muted small"><em>43 minutes ago</em>
-                                    </span>
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <i class="fa fa-upload fa-fw"></i>Server Rebooted
-                                    <span class="pull-right text-muted small"><em>11:32 AM</em>
-                                    </span>
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <i class="fa fa-bolt fa-fw"></i>Server Crashed!
-                                    <span class="pull-right text-muted small"><em>11:13 AM</em>
-                                    </span>
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <i class="fa fa-warning fa-fw"></i>Server Not Responding
-                                    <span class="pull-right text-muted small"><em>10:57 AM</em>
-                                    </span>
-                                    </a>
-
-                                    <a href="#" class="list-group-item">
-                                        <i class="fa fa-bolt fa-fw"></i>Server Crashed!
-                                    <span class="pull-right text-muted small"><em>11:13 AM</em>
-                                    </span>
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <i class="fa fa-warning fa-fw"></i>Server Not Responding
-                                    <span class="pull-right text-muted small"><em>10:57 AM</em>
-                                    </span>
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <i class="fa fa-shopping-cart fa-fw"></i>New Order Placed
-                                    <span class="pull-right text-muted small"><em>9:49 AM</em>
-                                    </span>
-                                    </a>
-                                     <a href="#" class="list-group-item">
-                                        <i class="fa fa-upload fa-fw"></i>Server Rebooted
-                                    <span class="pull-right text-muted small"><em>11:32 AM</em>
-                                    </span>
-                                    </a>
-                                   
-                                </div>
-                                /.list-group
-                                <a href="#" class="btn btn-info btn-block">View All Alerts</a>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-              -->
-				<!-- /. ROW  -->
 				<div class="row">
 					<div class="col-md-12">
 						<div class="panel panel-primary">
 							<!-- Default panel contents -->
 							<div class="panel-heading">员工信息</div>
 							<!-- Table -->
-							<form action="${pageContext.request.contextPath}/list.action"
-								method="post">
+							<form>
 								<table class="table">
 									<thead>
 										<tr>
@@ -335,25 +160,7 @@
 										</s:iterator>
 									</tbody>
 								</table>
-								<nav aria-label="Page navigation">
-									  <ul class="pagination">
-									    <li>
-									      <a href="#" aria-label="Previous">
-									        <span aria-hidden="true">&laquo;</span>
-									      </a>
-									    </li>
-									    <li><a href="#">1</a></li>
-									    <li><a href="#">2</a></li>
-									    <li><a href="#">3</a></li>
-									    <li><a href="#">4</a></li>
-									    <li><a href="#">5</a></li>
-									    <li>
-									      <a href="#" aria-label="Next">
-									        <span aria-hidden="true">&raquo;</span>
-									      </a>
-									    </li>
-									  </ul>
-										</nav>
+								 
 							</form>
 						</div>
 					</div>
@@ -366,8 +173,8 @@
 	<s:debug>debug</s:debug>
 	<!-- /. WRAPPER  -->
 	<div id="footer-sec">
-		Copyright &copy; 2016.Company name All rights reserved.More Templates
-		<a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a>
+		Copyright &copy; 2018.XXXX酒店 All rights reserved.More Templates
+		<a href="http://www.cssmoban.com/" target="_blank" title=" XXXX酒店"> XXXX酒店</a>
 		- Collect from <a href="http://www.cssmoban.com/" title="网页模板"
 			target="_blank">网页模板</a>
 	</div>

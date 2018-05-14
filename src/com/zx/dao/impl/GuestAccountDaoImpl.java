@@ -3,6 +3,7 @@ package com.zx.dao.impl;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
@@ -59,6 +60,40 @@ public class GuestAccountDaoImpl implements IGuestAccountDao {
 	            session.close();  
 	        } 
 			return true;  
+	}
+
+
+	@Override
+	public Guest searchGuestById(String GuestId) {
+		Configuration config = new Configuration().configure();
+		ServiceRegistry sr = new StandardServiceRegistryBuilder().applySettings(config.getProperties()).build();
+		sf = new Configuration().configure().buildSessionFactory(sr);
+		String hql = " from Guest where guestPhone = :guestPhone";
+		Session session = sf.openSession();
+		Query query = session.createQuery(hql).setString("guestPhone", GuestId);
+		Guest g = null;
+		g = (Guest) query.uniqueResult();
+		session.close();
+		return g;
+	}
+
+
+	@Override
+	public boolean updateGuest(Guest guest) {
+		Configuration configuration = new Configuration().configure();
+		SessionFactory sessionFactory = configuration.buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		Transaction transaction = null;
+		try {
+			transaction = session.beginTransaction();
+			session.update(guest);
+			transaction.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+		session.close();
+		return true;
 	}
 
 

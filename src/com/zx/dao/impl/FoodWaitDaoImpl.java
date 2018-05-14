@@ -53,7 +53,7 @@ public class FoodWaitDaoImpl implements IFoodWaitDao{
 		Configuration config = new Configuration().configure();
 		ServiceRegistry sr = new StandardServiceRegistryBuilder().applySettings(config.getProperties()).build();
 		sf = new Configuration().configure().buildSessionFactory(sr);
-		String hql = " from FoodWait";
+		String hql = " from FoodWait  order by food_waitTime";
 		Session session = sf.openSession();
 		Query query = session.createQuery(hql);
 		List<FoodWait> foodWait = query.list();
@@ -112,6 +112,35 @@ public class FoodWaitDaoImpl implements IFoodWaitDao{
 			return false;
 		}
 		return true;
+	}
+
+	@Override
+	public FoodWait searchFoodWaitByName(String foodName) {
+		Configuration config = new Configuration().configure();
+		ServiceRegistry sr = new StandardServiceRegistryBuilder().applySettings(config.getProperties()).build();
+		sf = new Configuration().configure().buildSessionFactory(sr);
+		String hql = " from FoodWait where foodName=:foodName";
+		Session session = sf.openSession();
+		Query query = session.createQuery(hql).setString("foodName", foodName);
+		FoodWait foodWait = (FoodWait) query.uniqueResult();
+		session.close();
+		return foodWait;
+	}
+
+	@Override
+	public List<FoodWait> searchFoodWaitByInfo(String info) {
+		Configuration config = new Configuration().configure();
+		ServiceRegistry sr = new StandardServiceRegistryBuilder().applySettings(config.getProperties()).build();
+		sf = new Configuration().configure().buildSessionFactory(sr);
+		String hql = " from FoodWait where foodName like :info or foodPrice like :info or foodUnit like :info";
+		Session session = sf.openSession();
+		Query query = session.createQuery(hql).setString("info", "%"+info+"%").setString("info", "%"+info+"%").setString("info", "%"+info+"%");
+		List<FoodWait> foodWait = query.list();
+		for(FoodWait r:foodWait) {
+			System.out.println(r.toString());
+		}
+		session.close();
+		return foodWait;
 	}
 
 }

@@ -6,7 +6,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>模板之家</title>
+<title> XXXX酒店</title>
 
 <!-- BOOTSTRAP STYLES-->
 <link href="assets/css/bootstrap.css" rel="stylesheet" />
@@ -32,7 +32,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.html">COMPANY NAME</a>
+				<a class="navbar-brand" href="index.html">XXXX酒店</a>
 			</div>
 			<div class="header-right">
 				<a href="message-task.html" class="btn btn-info" title="New Message"><b>30
@@ -46,104 +46,50 @@
 			</div>
 		</nav>
 		<!-- /. NAV TOP  -->
-		<nav class="navbar-default navbar-side" role="navigation">
-			<div class="sidebar-collapse">
-				<ul class="nav" id="main-menu">
-					<li>
-						<div class="user-img-div">
-							<img src="assets/img/user.png" class="img-thumbnail" />
+			        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li>
+                        <div class="user-img-div">
+                            <img src="assets/img/user.png" class="img-thumbnail" />
+                            <div class="inner-text">
+                            		欢迎！${empName } 
+                            <br />
+                                <small>上次登录：${empLastLoginTime } </small>
+                            </div>
+                        </div>
 
-							<div class="inner-text">
-								Jhon Deo Alex <br /> <small>Last Login : 2 Weeks Ago </small>
-							</div>
-						</div>
-
-					</li>
-
-
-					<li><a href="index.html"><i class="fa fa-dashboard "></i>Dashboard</a>
-					</li>
-					<li><a href="#"><i class="fa fa-desktop "></i>UI Elements
-							<span class="fa arrow"></span></a>
-						<ul class="nav nav-second-level">
-							<li><a href="panel-tabs.html"><i class="fa fa-toggle-on"></i>Tabs
-									& Panels</a></li>
-							<li><a href="notification.html"><i class="fa fa-bell "></i>Notifications</a>
-							</li>
-							<li><a href="progress.html"><i class="fa fa-circle-o "></i>Progressbars</a>
-							</li>
-							<li><a href="buttons.html"><i class="fa fa-code "></i>Buttons</a>
-							</li>
-							<li><a href="icons.html"><i class="fa fa-bug "></i>Icons</a>
-							</li>
-							<li><a href="wizard.html"><i class="fa fa-bug "></i>Wizard</a>
-							</li>
-							<li><a href="typography.html"><i class="fa fa-edit "></i>Typography</a>
-							</li>
-							<li><a href="grid.html"><i class="fa fa-eyedropper "></i>Grid</a>
-							</li>
+                    </li>
 
 
-						</ul></li>
-					<li><a href="#"><i class="fa fa-yelp "></i>Extra Pages <span
-							class="fa arrow"></span></a>
-						<ul class="nav nav-second-level">
-							<li><a href="invoice.html"><i class="fa fa-coffee"></i>Invoice</a>
-							</li>
-							<li><a href="pricing.html"><i class="fa fa-flash "></i>Pricing</a>
-							</li>
-							<li><a href="component.html"><i class="fa fa-key "></i>Components</a>
-							</li>
-							<li><a href="social.html"><i class="fa fa-send "></i>Social</a>
-							</li>
+                    <li>
+                        <a  href="index_admin.jsp"><i class="fa fa-dashboard "></i>收入</a>
+                    </li>
+                     <li>
+                        <a href="addFood.action"><i class="fa fa-yelp "></i>菜品管理 <span class="fa arrow"></span></a>
+                         <ul class="nav nav-second-level">
+                            <li>
+                                <a href="passFood.action"><i class="fa fa-coffee"></i>审核菜品</a>
+                            </li> 
+                            <li>
+                                <a href="foodList.action"><i class="fa fa-key "></i>查看菜品</a>
+                            </li>
+                            <li>
+                                <a class="active-menu" href="pricing.html"><i class="fa fa-flash "></i>更改/删除菜品</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="list.action"  class="active-menu"><i class="fa fa-anchor "></i>员工管理</a>
+                    </li>
+                     <li>
+                        <a href="roomList.action"><i class="fa fa-anchor "></i>房间管理</a>
+                    </li>
+                </ul>
 
-							<li><a href="message-task.html"><i
-									class="fa fa-recycle "></i>Messages & Tasks</a></li>
+            </div>
 
-
-						</ul></li>
-					<li><a href="table.html"><i class="fa fa-flash "></i>Data
-							Tables </a></li>
-					<li><a class="active-menu-top" href="#"><i
-							class="fa fa-bicycle "></i>Forms <span class="fa arrow"></span></a>
-						<ul class="nav nav-second-level collapse in">
-
-							<li><a class="active-menu" href="form.html"><i
-									class="fa fa-desktop "></i>Basic </a></li>
-							<li><a href="form-advance.html"><i class="fa fa-code "></i>Advance</a>
-							</li>
-
-
-						</ul></li>
-					<li><a href="gallery.html"><i class="fa fa-anchor "></i>Gallery</a>
-					</li>
-					<li><a href="error.html"><i class="fa fa-bug "></i>Error
-							Page</a></li>
-					<li><a href="login.html"><i class="fa fa-sign-in "></i>Login
-							Page</a></li>
-					<li><a href="#"><i class="fa fa-sitemap "></i>Multilevel
-							Link <span class="fa arrow"></span></a>
-						<ul class="nav nav-second-level">
-							<li><a href="#"><i class="fa fa-bicycle "></i>Second
-									Level Link</a></li>
-							<li><a href="#"><i class="fa fa-flask "></i>Second Level
-									Link</a></li>
-							<li><a href="#">Second Level Link<span class="fa arrow"></span></a>
-								<ul class="nav nav-third-level">
-									<li><a href="#"><i class="fa fa-plus "></i>Third Level
-											Link</a></li>
-									<li><a href="#"><i class="fa fa-comments-o "></i>Third
-											Level Link</a></li>
-
-								</ul></li>
-						</ul></li>
-
-					<li><a href="blank.html"><i class="fa fa-square-o "></i>Blank
-							Page</a></li>
-				</ul>
-			</div>
-
-		</nav>
+        </nav>
 		<!-- /. NAV SIDE  -->
 		<div id="page-wrapper">
 			<div id="page-inner">
@@ -196,8 +142,8 @@
 	</div>
 	<!-- /. WRAPPER  -->
 	<div id="footer-sec">
-		Copyright &copy; 2016.Company name All rights reserved.More Templates
-		<a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a>
+		Copyright &copy; 2018.XXXX酒店 All rights reserved.More Templates
+		<a href="http://www.cssmoban.com/" target="_blank" title=" XXXX酒店"> XXXX酒店</a>
 		- Collect from <a href="http://www.cssmoban.com/" title="网页模板"
 			target="_blank">网页模板</a>
 	</div>

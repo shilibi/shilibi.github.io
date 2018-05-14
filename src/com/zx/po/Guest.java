@@ -17,8 +17,8 @@ public class Guest {
 	private String guestCdtType;
 	private String guestId;
 	private String guestPhone;
-	private String guestRegisterTime;
-	private String guestLastLoginTime;
+	private Date guestRegisterTime;
+	private Date guestLastLoginTime;
 	public String getGuestName() {
 		return guestName;
 	}
@@ -65,20 +65,20 @@ public class Guest {
 	public void setGuestPhone(String guestPhone) {
 		this.guestPhone = guestPhone;
 	}
-	public String getGuestRegisterTime() {
+	public Date getGuestRegisterTime() {
 		return guestRegisterTime;
 	}
-	public void setGuestRegisterTime(String guestRegisterTime) {
+	public void setGuestRegisterTime(Date guestRegisterTime) {
 		this.guestRegisterTime = guestRegisterTime;
 	}
-	public String getGuestLastLoginTime() {
+	public Date getGuestLastLoginTime() {
 		return guestLastLoginTime;
 	}
-	public void setGuestLastLoginTime(String guestLastLoginTime) {
+	public void setGuestLastLoginTime(Date guestLastLoginTime) {
 		this.guestLastLoginTime = guestLastLoginTime;
 	}
 	public Guest(String guestName, String guestPwd, String guestSex, String guestCdtType, String guestId,
-			String guestPhone, String guestRegisterTime, String guestLastLoginTime) {
+			String guestPhone, Date guestRegisterTime, Date guestLastLoginTime) {
 		super();
 		this.guestName = guestName;
 		this.guestPwd = guestPwd;
@@ -98,5 +98,6 @@ public class Guest {
 				+ guestCdtType + ", guestId=" + guestId + ", guestPhone=" + guestPhone + ", guestRegisterTime="
 				+ guestRegisterTime + ", guestLastLoginTime=" + guestLastLoginTime + "]";
 	}
+	
 	
 }

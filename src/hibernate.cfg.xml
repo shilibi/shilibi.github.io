@@ -43,5 +43,6 @@
 		<mapping class="com.zx.po.LogRoom"/>
 		<mapping class="com.zx.po.DepartEmp"/>
 		<mapping class="com.zx.po.FoodSale"/>
+		<mapping class="com.zx.po.RoomGuestOrder"/>
 	</session-factory>
 </hibernate-configuration>

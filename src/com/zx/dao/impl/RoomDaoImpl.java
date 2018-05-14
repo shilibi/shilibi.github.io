@@ -31,6 +31,7 @@ public class RoomDaoImpl implements IRoomDao {
 		for(Room r:roomList) {
 			System.out.println(r.toString());
 		}
+		session.close();
 		return roomList;
 	}
 
@@ -108,6 +109,8 @@ public class RoomDaoImpl implements IRoomDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 			return false;
+		}finally {
+			session.close();
 		}
 		return true;
 	}

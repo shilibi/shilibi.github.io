@@ -32,8 +32,9 @@ public class FoodDaoImpl implements IFoodDao {
 		for(Food f:food) {
 			System.out.println(f.toString());
 		}
-		
+		session.close();
 		return food;
+		
 	}
 
 	@Override
@@ -103,6 +104,7 @@ public class FoodDaoImpl implements IFoodDao {
 			e.printStackTrace();
 			return false;
 		}
+		session.close();
 		return true;	
 	}
 
@@ -119,7 +121,8 @@ public class FoodDaoImpl implements IFoodDao {
 			System.out.println(r.toString());
 		}
 		session.close();
-		return foodList;		}
+		return foodList;	
+	}
 
 	@Override
 	public Food searchFoodByFoodId(int foodId) {

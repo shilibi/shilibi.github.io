@@ -7,7 +7,7 @@ import java.security.NoSuchAlgorithmException;
 import org.junit.Test;
 
 /**
- * Created by hp on 2016/11/28.
+ * Created by hp on 2018/11/28.
  */
 public class Md5Utils {
     /**

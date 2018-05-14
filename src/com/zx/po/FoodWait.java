@@ -10,10 +10,11 @@ import javax.persistence.Table;
 public class FoodWait {
 
 	private String foodName;
-	private double foodPrice;
+	private int foodPrice;
 	private char foodUnit;
 	private String food_waitTime;
 	private int empId;
+	private String foodWaitStatus;
 	@Id
 	public String getFoodName() {
 		return foodName;
@@ -21,10 +22,10 @@ public class FoodWait {
 	public void setFoodName(String foodName) {
 		this.foodName = foodName;
 	}
-	public double getFoodPrice() {
+	public int getFoodPrice() {
 		return foodPrice;
 	}
-	public void setFoodPrice(double foodPrice) {
+	public void setFoodPrice(int foodPrice) {
 		this.foodPrice = foodPrice;
 	}
 	public char getFoodUnit() {
@@ -45,13 +46,21 @@ public class FoodWait {
 	public void setEmpId(int empId) {
 		this.empId = empId;
 	}
-	public FoodWait(String foodName, double foodPrice, char foodUnit, String food_waitTime, int empId) {
+	public String getFoodWaitStatus() {
+		return foodWaitStatus;
+	}
+	public void setFoodWaitStatus(String foodWaitStatus) {
+		this.foodWaitStatus = foodWaitStatus;
+	}
+	public FoodWait(String foodName, int foodPrice, char foodUnit, String food_waitTime, int empId,
+			String foodWaitStatus) {
 		super();
 		this.foodName = foodName;
 		this.foodPrice = foodPrice;
 		this.foodUnit = foodUnit;
 		this.food_waitTime = food_waitTime;
 		this.empId = empId;
+		this.foodWaitStatus = foodWaitStatus;
 	}
 	public FoodWait() {
 		super();
@@ -59,6 +68,7 @@ public class FoodWait {
 	@Override
 	public String toString() {
 		return "FoodWait [foodName=" + foodName + ", foodPrice=" + foodPrice + ", foodUnit=" + foodUnit
-				+ ", food_waitTime=" + food_waitTime + ", empId=" + empId + "]";
+				+ ", food_waitTime=" + food_waitTime + ", empId=" + empId + ", foodWaitStatus=" + foodWaitStatus + "]";
 	}
+
 }

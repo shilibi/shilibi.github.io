@@ -117,6 +117,7 @@ public class EmpAccountDaoImpl implements IEmpAccountDao {
 			e.printStackTrace();
 			return false;
 		}
+		session.close();
 		return true;
 	}
 
@@ -166,7 +167,7 @@ public class EmpAccountDaoImpl implements IEmpAccountDao {
 		session.close();
 		return e;
 	}
-
+	 
 	@Override
 	public Emp EmpLoginAdmin(String empId, String empPwd) {
 		Configuration config = new Configuration().configure();
@@ -180,8 +181,4 @@ public class EmpAccountDaoImpl implements IEmpAccountDao {
 		session.close();
 		return e;		
 	}
-
-
-
-
 }

@@ -1,5 +1,7 @@
 package com.zx.po;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -8,17 +10,12 @@ import javax.persistence.Table;
 @Table(name="foodsale")
 public class FoodSale {
 	
-	private String saleDate;
+	private Date saleDate;
 	private int foodId;
 	private int foodNumber;
 	private int foodTotalPrice;
 	@Id
-	public String getSaleDate() {
-		return saleDate;
-	}
-	public void setSaleDate(String saleDate) {
-		this.saleDate = saleDate;
-	}
+	
 	public int getFoodId() {
 		return foodId;
 	}
@@ -36,6 +33,12 @@ public class FoodSale {
 	}
 	public void setFoodTotalPrice(int foodTotalPrice) {
 		this.foodTotalPrice = foodTotalPrice;
+	}
+	public Date getSaleDate() {
+		return saleDate;
+	}
+	public void setSaleDate(Date saleDate) {
+		this.saleDate = saleDate;
 	}
 	@Override
 	public String toString() {

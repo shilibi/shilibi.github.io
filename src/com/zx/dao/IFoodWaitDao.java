@@ -30,4 +30,16 @@ public interface IFoodWaitDao {
 	 * 返回值：boolean
 	 */
 	boolean updateFoodWait(FoodWait foodWait);
+	/*
+	 * 根据待审核菜品名查询
+	 * 参数：foodName
+	 * 返回值：foodWait
+	 */
+	FoodWait searchFoodWaitByName(String foodName);
+	/*
+	 * 根据输入内容查询
+	 *参数：String info
+	 *返回值：List<FoodWait>
+	 */
+	List<FoodWait> searchFoodWaitByInfo(String info);
 }

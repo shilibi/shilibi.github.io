@@ -1,5 +1,7 @@
 package com.zx.dao;
 
+import com.zx.po.FoodSale;
+
 public interface IFoodSaleDao {
 
 	/*
@@ -8,4 +10,11 @@ public interface IFoodSaleDao {
 	 * 返回值 ：int
 	 */
 	int searchTotalFoodSale(String Date);
+	/*
+	 * 添加销售菜品
+	 * 参数 ：foodSale
+	 * 返回值:boolean
+	 */
+	boolean addFoodSale(FoodSale fs);
+	
 }

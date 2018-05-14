@@ -5,6 +5,7 @@ import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
@@ -14,6 +15,7 @@ import com.zx.dao.IFoodSaleDao;
 import com.zx.po.Emp;
 import com.zx.po.Food;
 import com.zx.po.FoodSale;
+import com.zx.util.Md5Utils;
 
 public class FoodSaleDaoImpl implements IFoodSaleDao {
 	private SessionFactory sf ;
@@ -35,6 +37,29 @@ public class FoodSaleDaoImpl implements IFoodSaleDao {
 		session.close();
 		
 		return totalPrice;
+	}
+
+	@Override
+	public boolean addFoodSale(FoodSale fs) {
+		Configuration config = new Configuration().configure();
+		sf = config.buildSessionFactory();
+		Session session = sf.openSession();
+		Transaction transaction = null;
+		try {
+			transaction = session.beginTransaction();
+			session.save(fs);
+			transaction.commit();
+		} catch (Exception e) {
+			if(transaction!=null) {
+				transaction.rollback();
+				e.printStackTrace();
+				return false;
+			}
+			
+		}finally {
+			session.close();
+		}
+		return true;
 	}
 
 }

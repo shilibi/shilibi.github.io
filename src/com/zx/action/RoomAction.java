@@ -92,4 +92,9 @@ public class RoomAction extends ActionSupport{
 			return "error";
 		}
 	}
+	public String searchRoom() {
+		HttpServletRequest request = ServletActionContext.getRequest();
+		roomList = roomDao.searchRoomByName(request.getParameter("info"));
+		return "success";
+	}
 }

@@ -43,4 +43,5 @@ public interface IFoodDao {
 	 * 返回值：Food
 	 */
 	Food searchFoodByFoodId(int foodId);
+
 }

@@ -22,4 +22,16 @@ public interface IGuestAccountDao {
 	 * 返回值：从数据库获取的guest对象
 	 */
 	Guest GuestLogin(String guestPhone,String guestPwd);
+	/*
+	 * 根据Id查询用户
+	 * 参数：int guestPhone
+	 * 返回值:guest
+	 */
+	Guest searchGuestById(String GuestId);
+	/*
+	 * 更新用户
+	 * 参数：guest
+	 * 返回值:boolean
+	 */
+	boolean updateGuest(Guest guest);
 }

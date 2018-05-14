@@ -1,4 +1,4 @@
-﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@ taglib prefix="s" uri="/struts-tags"%>
@@ -23,7 +23,7 @@
     <div id="wrapper">
         <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
-                <a class="navbar-brand" href="index.jsp">XX酒店后台管理</a>
+                <a class="navbar-brand" href="index_admin.jsp">XX酒店后台管理</a>
             </div>
 
             <div class="header-right">
@@ -52,32 +52,19 @@
 
 
                     <li>
-                        <a class="active-menu" href="index.jsp"><i class="fa fa-dashboard "></i>收入</a>
+                        <a class="active-menu" href="index_guest.jsp"><i class="fa fa-dashboard "></i>住房概述</a>
                     </li>
                      <li>
-                        <a href="addFood.action"><i class="fa fa-yelp "></i>菜品管理 <span class="fa arrow"></span></a>
-                         <ul class="nav nav-second-level">
-                            <li>
-                                <a href="invoice.html"><i class="fa fa-coffee"></i>添加菜品</a>
-                            </li> 
-                            <li>
-                                <a href="component.html"><i class="fa fa-key "></i>查看菜品</a>
-                            </li>
-                            <li>
-                                <a href="pricing.html"><i class="fa fa-flash "></i>更改/删除菜品</a>
-                            </li>
-                        </ul>
+                        <a href="selectOrder.action"><i class="fa fa-yelp "></i>预订管理 <span class="fa arrow"></span></a>
                     </li>
                     <li>
-                        <a href="list.action"><i class="fa fa-anchor "></i>员工管理</a>
+                        <a href="roomList_emp.action"><i class="fa fa-anchor "></i>房间情况</a>
                     </li>
                      <li>
-                        <a href="roomList.action"><i class="fa fa-anchor "></i>房间管理</a>
+                        <a href="changePwd.jsp"><i class="fa fa-anchor "></i>密码修改</a>
                     </li>
                 </ul>
-
             </div>
-
         </nav>
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
@@ -86,26 +73,14 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h1 class="page-head-line">今日概况</h1>
-<!--                         <h1 class="page-subhead-line">This is dummy text , you can replace it with your original text. </h1>
- -->
                     </div>
                 </div>
                 <!-- /. ROW  -->
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="main-box mb-red">
-                            <a href="#">
-<!--                                 <i class="fa fa-bolt fa-5x"></i>
- -->                                <h3>￥${totalSaleFood }</h3>
-                                <h6>今日餐厅收入</h6>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
                         <div class="main-box mb-dull">
                             <a href="#">
-<!--                                 <i class="fa fa-plug fa-5x"></i>
- -->                                <h3>${roomSaleNo}/${ roomNo}</h3>
+                              <h3>${roomSaleNo}/${ roomNo}</h3>
                                 <h6>今日客房入住</h6>
                             </a>
                         </div>
@@ -121,14 +96,12 @@
                 </div>
                 <hr>
                 <hr>
-            </div>
-        </div>
         <!-- /. PAGE WRAPPER  -->
     </div>
     <!-- /. WRAPPER  -->
 
     <div id="footer-sec">
-        Copyright &copy; 2018.XX酒店 All rights reserved.
+        Copyright &copy; 2018.XXXX酒店 All rights reserved.
     </div>
     <!-- /. FOOTER  -->
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
